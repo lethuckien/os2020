@@ -1,0 +1,57 @@
+1) 	Input: echo hello world
+	Output: hello world
+
+2)	Input: passwd
+	Output:Changing password for kien.
+		(current) UNIX password:
+
+3)	Input: date
+	Output: 2020年 01月 20日 星期一 11:23:38 CST
+
+4)	Input: hostname
+	Output: KienLT
+
+5) 	Input: arch
+	Output: x86_64
+
+6)	Input: uname -a
+	Output: Linux KienLT 5.0.0-23-generic #24~18.04.1-Ubuntu SMP Mon Jul 29 16:12:28 UTC 2019 			x86_64 x86_64 x86_64 GNU/Linux
+
+7)	Input: dmesg
+	Output:[ 1010.019991] audit: type=1400 audit(1579487687.834:265): apparmor="STATUS" 			operation="profile_replace" info="same as current profile, skipping" 			profile="unconfined" name="snap-update-ns.core" pid=4091 comm="apparmor_parser"
+		[ 1010.022192] audit: type=1400 audit(1579487687.838:266): apparmor="STATUS" 			operation="profile_replace" info="same as current profile, skipping" 			profile="unconfined" name="snap.core.hook.configure" pid=4092 			   			comm="apparmor_parser"
+		[ 2539.391028] usb 2-6: reset high-speed USB device number 4 using xhci_hcd
+
+8)	Input: uptime
+	Output: 11:28:07 up  1:10,  1 user,  load average: 0.25, 0.28, 0.51
+
+9)	Input: who am i
+	Output: 
+
+10)	Input: whoami
+	Output: kien
+
+11) 	Input: who
+	Output: kien     :0           2020-01-20 18:18 (:0)
+
+12)	Input: id
+	Output: uid=1000(kien) gid=1000(kien) groups=1000(kien),4(adm),24(cdrom),27(sudo),30(dip)
+		46(plugdev),116(lpadmin),126(sambashare)
+
+13)	Input: last
+	Output: kien     :0           :0               Mon Jan 20 18:18   still logged in
+		reboot   system boot  5.0.0-23-generic Mon Jan 20 18:17   still running
+		kien     :0           :0               Mon Jan 20 04:16 - down   (00:02)
+		reboot   system boot  5.0.0-23-generic Mon Jan 20 04:16 - 04:19  (00:02)
+
+wtmp begins Mon Jan 20 04:16:29 2020
+
+14) 	Input: finger
+	Output: Login     Name       Tty      Idle  Login Time   Office     Office Phone
+		kien      kien      *:0             Jan 20 18:18 (:0)
+
+15)	Input: w
+	Output:  11:33:37 up  1:15,  1 user,  load average: 0.62, 0.43, 0.48
+		 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+		 kien     :0       :0               18:18   ?xdm?   2:26   0.00s /usr/lib/gdm3/g
+
