@@ -1,0 +1,20 @@
+1)	Input: ps aux | grep list
+
+  	Output: kien      5214  0.0  0.0  23072  1152 pts/0    S+   11:05   0:00 grep --color=auto list
+
+2)	Input: wc /etc/passwd
+
+  	Output: 41   71 2409 /etc/passwd
+
+3)	Input: free -h
+        Output:    
+	      total        used        free      shared  buff/cache   available
+Mem:           4,8G        1,1G        1,9G         39M        1,8G        3,4G
+Swap:          2,0G          0B        2,0G
+
+4)	Input: grep "cpu core" /proc/cpuinfo
+	Output: cpu cores	: 1
+
+5)	Input: find ~/Pictures/ -name *.jpg | wc
+      	Output: 0       0       0
+

@@ -1,0 +1,58 @@
+1) 	Input: ps -aux
+	
+	Output:
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.1 159972  9436 ?        Ss   10:38   0:04 /sbin/init spl
+root         2  0.0  0.0      0     0 ?        S    10:38   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        I<   10:38   0:00 [rcu_gp]
+root         4  0.0  0.0      0     0 ?        I<   10:38   0:00 [rcu_par_gp]
+root         6  0.0  0.0      0     0 ?        I<   10:38   0:00 [kworker/0:0H-
+root         9  0.0  0.0      0     0 ?        I<   10:38   0:00 [mm_percpu_wq]
+root        10  0.0  0.0      0     0 ?        S    10:38   0:00 [ksoftirqd/0]
+root        11  0.0  0.0      0     0 ?        I    10:38   0:00 [rcu_sched]
+root        12  0.0  0.0      0     0 ?        S    10:38   0:00 [migration/0]
+root        13  0.0  0.0      0     0 ?        S    10:38   0:00 [idle_inject/0
+root        14  0.0  0.0      0     0 ?        S    10:38   0:00 [cpuhp/0]
+root        15  0.0  0.0      0     0 ?        S    10:38   0:00 [kdevtmpfs]
+root        16  0.0  0.0      0     0 ?        I<   10:38   0:00 [netns]
+root        17  0.0  0.0      0     0 ?        S    10:38   0:00 [rcu_tasks_kth
+root        18  0.0  0.0      0     0 ?        S    10:38   0:00 [kauditd]
+...
+
+2)	Input: ps -aux | grep gnome-calculator
+	
+	Output:
+kien      5939 17.6  0.7 869492 39876 tty1     Sl+  11:47   0:01 gnome-calculator
+kien      6174  0.0  0.0  23072  1028 pts/0    S+   11:47   0:00 grep --color=auto gnome-calculator
+
+
+	Input: cat < /proc/5939/status
+
+	Output: 
+Name:	gnome-calculato
+Umask:	0002
+State:	S (sleeping)
+Tgid:	5939
+Ngid:	0
+Pid:	5939
+PPid:	1160
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	256
+Groups:	4 24 27 30 46 116 126 1000 
+NStgid:	5939
+NSpid:	5939
+NSpgid:	837
+NSsid:	837
+
+3)	Input: kill -STOP 5939
+	Result: Calculator doesnt respond when pressing numbers
+
+	Input: kill -CONT 5939
+	Result: Calculator receives the previously pressed numbers
+
+	Input: kill -KILL 5939
+	Result: The calculator app closes
+
+
