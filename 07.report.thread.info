@@ -1,0 +1,16 @@
+1) 	Input: ps aux| grep firefox
+
+	Output: 
+
+kien      3749 38.0  5.2 2850236 260732 tty1   Sl+  21:19   0:04 /usr/lib/firefox/firefox
+kien      3790 14.1  2.8 2619448 143000 tty1   Sl+  21:19   0:01 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 181046 -parentBuildID 20190718161435 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3749 true tab
+kien      3828  6.1  2.1 2579348 109760 tty1   Sl+  21:19   0:00 /usr/lib/firefox/firefox -contentproc -childID 2 -isForBrowser -prefsLen 5979 -prefMapSize 181046 -parentBuildID 20190718161435 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3749 true tab
+kien      3882  6.0  1.5 2557428 79472 tty1    Sl+  21:19   0:00 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6821 -prefMapSize 181046 -parentBuildID 20190718161435 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3749 true tab
+kien      3910  0.0  0.0  23072  1044 pts/0    S+   21:20   0:00 grep --color=auto firefox
+
+
+	Input: ps -o nlwp 3749
+
+	Output: 
+NLWP
+  50

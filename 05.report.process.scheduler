@@ -1,0 +1,41 @@
+1)	Input: cat /proc/sched_debug | grep systemd
+	
+	Output:
+
+S        systemd     1      1887.161216     21115   120         0.000000      2708.518343         0.000000 0 0 /autogroup-2
+ Ssystemd-journal   271       244.862187      1831   119         0.000000       302.060241         0.000000 0 0 /autogroup-7
+ S  systemd-udevd   331      2208.747466      1206   120         0.000000       554.532981         0.000000 0 0 /autogroup-20
+ Ssystemd-timesyn   397        49.378196        80   120         0.000000        49.764372         0.000000 0 0 /autogroup-25
+ Ssystemd-resolve   398        74.728742       208   120         0.000000        76.079656         0.000000 0 0 /autogroup-24
+ S systemd-logind   559       155.442631      5014   120         0.000000       156.707080         0.000000 0 0 /autogroup-39
+ Sapt.systemd.dai   848        31.143373         5   120         0.000000         1.899201         0.000000 0 0 /autogroup-72
+ Sapt.systemd.dai   871    369055.651329        34   120         0.000000         4.167419         0.000000 0 0 /autogroup-72
+ S        systemd   949       252.795729       828   120         0.000000       219.854465         0.000000 0 0 /autogroup-74
+
+
+2)	Input: ps aux| grep systemd
+
+	Output:
+
+root       271  0.0  0.2 111480 14240 ?        S<s  20:50   0:00 /lib/systemd/systemd-journald
+root       331  0.0  0.1  35156  5120 ?        Ss   20:50   0:00 /lib/systemd/systemd-udevd
+systemd+   397  0.0  0.0 146104  3500 ?        Ssl  20:50   0:00 /lib/systemd/systemd-timesyncd
+systemd+   398  0.0  0.1  70752  5304 ?        Ss   20:50   0:00 /lib/systemd/systemd-resolved
+root       559  0.0  0.1  70708  6064 ?        Ss   20:50   0:00 /lib/systemd/systemd-logind
+message+   571  0.0  0.1  51480  5936 ?        Ss   20:51   0:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root       848  0.0  0.0   4624   808 ?        Ss   20:51   0:00 /bin/sh /usr/lib/apt/apt.systemd.daily update
+root       871  0.0  0.0   4624  1664 ?        S    20:51   0:00 /bin/sh /usr/lib/apt/apt.systemd.daily lock_is_held update
+kien       949  0.0  0.1  77076  8284 ?        Ss   20:51   0:00 /lib/systemd/systemd --user
+kien      1165  0.0  0.1  50888  5284 ?        Ss   20:51   0:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+kien      3494  0.0  0.0  23072  1052 pts/0    S+   21:14   0:00 grep --color=auto systemd
+
+
+
+	Input: grep switches /proc/271/sched
+
+	Output:
+
+nr_switches                                  :                 1871
+nr_voluntary_switches                        :                 1696
+nr_involuntary_switches                      :                  175
+
